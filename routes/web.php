@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +17,41 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+
+    /* using tables QUERY BUILDER */
+    // $users = DB::table('users')->where('id', '1')->get();
+    // $user = DB::table('users')->insert([
+    //     'email' => 'kayla@example.com', 'name' => 'example', 'password' => '12345678'
+    // ]);
+    /* update */
+    // $user = DB::table('users')->where('id', 4)->update(['name' => 'kayla']);
+    /* delete users */
+    // $user = DB::table('users')->where('id', '4')->delete();
+    /* table end */
+
+    /* RAW QUERY */
+    // $users = DB::select('select * from users ');
+    // create new userss
+    // $user = DB::insert('insert into users (name, email, password) values (?,?,?)', ['Samad', 'samad@gmail.com', '12345678']);
+    // update user
+    // $user = DB::update("update users set email=? where id=?", ['adewaleselim60@gmail.com', 1]);
+    // delete user
+    // $user = DB::delete('delete from users where id=2');
+
+
+    /* ELOQUENT  */
+    // $users = User::all()->first();
+    $user = User::create([
+        'name' => 'augustin',
+        'email' => 'augustin@gmail.com',
+        'password' => '12345678',
+    ]);
+
+
+
+
+    dd($user);
 });
 
 Route::get('/dashboard', function () {
