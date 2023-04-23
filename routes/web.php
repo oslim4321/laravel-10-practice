@@ -41,11 +41,19 @@ Route::get('/', function () {
 
 
     /* ELOQUENT  */
-    // $users = User::all()->first();
-    $user = User::create([
-        'name' => 'augustin',
-        'email' => 'augustin@gmail.com',
-        'password' => '12345678',
+    /* get user */
+    $users = User::where('id', 5)->first();
+    /* create user */
+    // $user = User::create([
+    //     'name' => 'augustin',
+    //     'email' => 'augustin@gmail.com',
+    //     'password' => '12345678',
+    // ]);
+    /* update user */
+    $user = User::where('id', 5)->first();
+
+    $user->update([
+        'email' => 'augustin3@gmail.com',
     ]);
 
 
