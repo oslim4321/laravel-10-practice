@@ -42,24 +42,26 @@ Route::get('/', function () {
 
     /* ELOQUENT  */
     /* get user */
-    $users = User::where('id', 5)->first();
+    // $users = User::where('id', 5)->first();
     /* create user */
-    // $user = User::create([
-    //     'name' => 'augustin',
-    //     'email' => 'augustin@gmail.com',
-    //     'password' => '12345678',
-    // ]);
-    /* update user */
-    $user = User::where('id', 5)->first();
-
-    $user->update([
-        'email' => 'augustin3@gmail.com',
+    $user = User::create([
+        'name' => 'emmmy',
+        'email' => 'emmy1@gmail.com',
+        'password' => '12345678',
     ]);
+    /* update user */
+    // $user = User::where('id', 5)->first();
+
+    // $user->update([
+    //     'email' => 'augustin3@gmail.com',
+    // ]);
 
 
-
-
+    // $users = User::all();
     dd($user);
+
+
+    /* using all the query to create users */
 });
 
 Route::get('/dashboard', function () {
