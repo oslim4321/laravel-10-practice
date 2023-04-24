@@ -13,8 +13,8 @@
         @csrf
     </form>
 
-    <form method="post" action="" class="mt-6 space-y-6">
-        @csrf
+    <form method="post" action="{{ route('profile.avatar') }}" class="mt-6 space-y-6">
+        {{-- @csrf --}}
         @method('patch')
 
         <div>
