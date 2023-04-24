@@ -17,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
+    return view('welcome');
 
-    /* using tables QUERY BUILDER */
+    /* {
+     /* using tables QUERY BUILDER */
     // $users = DB::table('users')->where('id', '1')->get();
     // $user = DB::table('users')->insert([
     //     'email' => 'kayla@example.com', 'name' => 'example', 'password' => '12345678'
@@ -44,24 +45,24 @@ Route::get('/', function () {
     /* get user */
     // $users = User::where('id', 5)->first();
     /* create user */
-    $user = User::create([
-        'name' => 'emmmy',
-        'email' => 'emmy1@gmail.com',
-        'password' => '12345678',
-    ]);
+    // $user = User::create([
+    //     'name' => 'emmmy',
+    //     'email' => 'emmy123@gmail.com',
+    //     'password' => '12345678',
+    // ]);
     /* update user */
     // $user = User::where('id', 5)->first();
 
     // $user->update([
     //     'email' => 'augustin3@gmail.com',
     // ]);
+    // $user = User::find(9);
+
 
 
     // $users = User::all();
-    dd($user);
-
-
-    /* using all the query to create users */
+    // dd($users);
+    //    } */
 });
 
 Route::get('/dashboard', function () {
