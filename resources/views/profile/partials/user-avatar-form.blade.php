@@ -13,13 +13,18 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.avatar') }}" class="mt-6 space-y-6">
-        {{-- @csrf --}}
+    <form method="post" action="{{ route('profile.avatar') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
+        @if (session('message'))
+            <div class="text-red-500">
+                {{ session('message') }}
+            </div>
+        @endif
+        @csrf
         @method('patch')
 
         <div>
-            <x-input-label for="avatar" :value="__('Avatar')" />
-            <x-text-input id="avatar" avatar="avatar" type="file" class="mt-1 block w-full" :value="old('avatar', $user->avatar)" required autofocus autocomplete="avatar" />
+            <x-input-label for="name" :value="__('Avatar')" />
+            <x-text-input id="avatar" name="avatar" type="file" class="mt-1 block w-full" :value="old('avatar', $user->avatar)" required autofocus autocomplete="avatar" />
             <x-input-error class="mt-2" :messages="$errors->get('avatar')" />
         </div>
        
