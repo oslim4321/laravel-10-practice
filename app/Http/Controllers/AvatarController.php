@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateAvatarRequest;
 use Illuminate\Http\Request;
 
 class AvatarController extends Controller
 {
-    public function update(Request $request)
+    public function update(UpdateAvatarRequest  $request)
     {
-        $request->validate([
-            'avatar' => 'image',
-        ]);
         dd($request->all());
         return response()->redirectTo(route('profile.edit'));
         // return back()->with('message', 'success');
